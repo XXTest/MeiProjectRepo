@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>TransactionManager load transaction data</title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<table style="width:80%">
+  <thead>
+  <tr>
+    <th style="background-color:#B1CCE1">Transaction Id</th>
+    <th style="background-color:#B1CCE1">Date</th>		
+    <th style="background-color:#B1CCE1">Quantity</th>
+	<th style="background-color:#B1CCE1">Price</th>
+	<th style="background-color:#B1CCE1">Cost</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="transaction : ${transactions}">
+	<td th:text="${transaction.s1}"></td>
+	<td th:text="${transaction.s2}"></td>
+	<td th:text="${transaction.s3}"></td>
+	<td th:text="${transaction.s4}"></td>
+	<td th:text="${transaction.s5}"></td>
+   </tr>
+  </tbody>
+</table>
+<p></p>
+<p style="text-align:center;">Click <a th:href="@{/summary}">Summary</a> to view transaction summary.</p>
+<p style="text-align:center;">Click <a th:href="@{/addtransaction}">Add transaction</a> to insert new transaction.</p>
+<p style="text-align:center;">Click <a th:href="@{/start}">here</a> to go back to start page.</p>
+
+</body>
+</html>

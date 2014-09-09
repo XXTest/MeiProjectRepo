@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Transaction summary</title>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<table style="width:90%">
+  <thead>
+  <tr>
+  	<th style="background-color:#B1CCE1" colspan="6">Transaction Summary</th>
+  </tr>
+  <tr>
+    <th>Date</th>
+    <th>Daily number of transactions</th>	
+    <th>Daily total quantity</th>
+    <th>Daily average quantity</th>
+	<th>Daily total revenue</th>
+	<th>Daily total cost</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="dailyrecord : ${dailyrecords}">
+	<td th:text="${dailyrecord.s1}"></td>
+	<td th:text="${dailyrecord.s2}"></td>
+	<td th:text="${dailyrecord.s3}"></td>
+	<td th:text="${dailyrecord.s4}"></td>
+	<td th:text="${dailyrecord.s5}"></td>
+	<td th:text="${dailyrecord.s6}"></td>
+  </tr>
+   <tr>
+      <td colspan="3">Total number of transactions</td>
+      <td colspan="3" th:text="${sumup.s2}" ></td>
+   </tr>
+   <tr>
+      <td colspan="3">Total quantity</td>
+      <td colspan="3" th:text="${sumup.s3}"></td>
+   </tr>
+   <tr>
+      <td colspan="3">Average quantity</td>
+      <td colspan="3" th:text="${sumup.s4}"></td>
+   </tr>
+   <tr>
+      <td colspan="3">Total revenue</td>
+      <td colspan="3" th:text="${sumup.s5}"></td>
+   </tr>
+   <tr>
+      <td colspan="3">Total cost</td>
+      <td colspan="3" th:text="${sumup.s6}"></td>
+   </tr>
+  </tbody>
+</table>
+<p></p>
+<p style="text-align:center;">Click <a th:href="@{/load}">here</a> to transaction list.</p>
+
+</body>
+</html>

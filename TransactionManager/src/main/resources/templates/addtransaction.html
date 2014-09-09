@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add new transaction page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Add new transaction</h1>
+    <form action="#" th:action="@{/addtransaction}" th:object="${transactiondata}" method="post">
+    	<p>Date: <input type="text" th:field="*{s1}" />format: yyyy-MM-dd</p>
+    	<p>Quantity: <input type="text" th:field="*{s2}" /></p>
+    	<p>Price: <input type="text" th:field="*{s3}" /></p>
+        <p>Cost: <input type="text" th:field="*{s4}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    <p>Click <a th:href="@{/load}">here</a> to see transaction list.</p>
+</body>
+</html>

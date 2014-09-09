@@ -1,0 +1,8 @@
+com\xuemeixi\project\Application.class
+com\xuemeixi\project\domain\Transaction.class
+com\xuemeixi\project\MongoDB\MongoAccess.class
+com\xuemeixi\project\Helper\SummaryHelper.class
+com\xuemeixi\project\domain\ActionMessage.class
+com\xuemeixi\project\TransactionManagerWebInitializer.class
+com\xuemeixi\project\domain\Transactiondata.class
+com\xuemeixi\project\MainController.class
